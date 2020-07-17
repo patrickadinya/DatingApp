@@ -1,3 +1,4 @@
+import { TimeagoModule } from 'ngx-timeago';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
@@ -59,6 +60,7 @@ export function tokenGetter() {
       FormsModule,
       BrowserAnimationsModule,
       ReactiveFormsModule,
+      TimeagoModule.forChild(),
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),
       TabsModule.forRoot(),
