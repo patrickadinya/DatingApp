@@ -1,3 +1,4 @@
+
 import { TimeagoModule } from 'ngx-timeago';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
@@ -32,6 +33,7 @@ import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AuthService } from './_services/auth.service';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
+import { ListsResolver } from './_resolvers/lists.resolver';
 
 
 
@@ -83,6 +85,7 @@ export function tokenGetter() {
       MemberDetailResolver,
       MemberListResolver,
       MemberEditResolver,
+      ListsResolver,
       PreventUnsavedChanges
    ],
    bootstrap: [
