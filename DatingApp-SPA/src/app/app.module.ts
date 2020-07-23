@@ -1,3 +1,5 @@
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
+import { MessagesResolver } from './_resolvers/messages.resolver';
 
 import { TimeagoModule } from 'ngx-timeago';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
@@ -55,7 +57,8 @@ export function tokenGetter() {
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
-      PhotoEditorComponent
+      PhotoEditorComponent,
+      MemberMessagesComponent
    ],
    imports: [
       BrowserModule,
@@ -83,6 +86,7 @@ export function tokenGetter() {
    providers: [
       ErrorInterceptorProvider,
       MemberDetailResolver,
+      MessagesResolver,
       MemberListResolver,
       MemberEditResolver,
       ListsResolver,
