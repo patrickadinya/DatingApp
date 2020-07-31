@@ -1,3 +1,9 @@
+import { RolesModalComponent } from './admin/roles-modal/roles-modal.component';
+import { AdminService } from './_services/admin.service';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+import { PhotoManagementComponent } from './admin/photo-management/photo-management.component';
+import { HasRoleDirective } from './_directives/hasRole.directive';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 import { MessagesResolver } from './_resolvers/messages.resolver';
 
@@ -16,6 +22,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule} from 'ngx-bootstrap/modal';
 import {RouterModule} from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { FileUploadModule } from 'ng2-file-upload';
@@ -58,7 +65,12 @@ export function tokenGetter() {
       MemberDetailComponent,
       MemberEditComponent,
       PhotoEditorComponent,
-      MemberMessagesComponent
+      MemberMessagesComponent,
+      AdminPanelComponent,
+      HasRoleDirective,
+      PhotoManagementComponent,
+      UserManagementComponent,
+      RolesModalComponent
    ],
    imports: [
       BrowserModule,
@@ -73,6 +85,7 @@ export function tokenGetter() {
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),
       TabsModule.forRoot(),
+      ModalModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       FileUploadModule,
       JwtModule.forRoot({
@@ -90,7 +103,11 @@ export function tokenGetter() {
       MemberListResolver,
       MemberEditResolver,
       ListsResolver,
-      PreventUnsavedChanges
+      PreventUnsavedChanges,
+      AdminService
+   ],
+   entryComponents: [
+      RolesModalComponent
    ],
    bootstrap: [
       AppComponent

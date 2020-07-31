@@ -3,6 +3,7 @@ export interface Photo {
     url: string;
     description: string;
     dateAdded: Date;
-    isMain:boolean;
+    isMain: boolean;
+    isApproved: boolean;
 }
 

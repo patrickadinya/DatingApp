@@ -42,13 +42,13 @@ export class MemberMessagesComponent implements OnInit {
 
   sendMessage() {
     this.newMessage.recipientId =  this.recipientId;
-    this.userService.sendMessage(this.authService.decodededToken.nameid,this.newMessage).subscribe((message: Message) => {
+    this.userService.sendMessage(this.authService.decodededToken.nameid, this.newMessage).subscribe((message: Message) => {
       this.messages.unshift(message);
       // reset form
       this.newMessage.content = '';
     }, error => {
       this.alertify.error(error);
-    })
+    });
   }
 
 }
